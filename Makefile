@@ -60,7 +60,7 @@ endif
 CPPFLAGS := -DNDEBUG
 CFLAGS := -pedantic
 CFLAGS += -MMD
-CLFAGS += -Wall \
+CFLAGS += -Wall \
           -Wextra \
           -Wno-missing-field-initializers
 CFLAGS += -O2
