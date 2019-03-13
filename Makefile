@@ -5,7 +5,7 @@ ifneq ($(filter Msys Cygwin, $(shell uname -o)), )
     TYRIAN_DIR = C:\\OPENTYRIAN
 else
     PLATFORM := UNIX
-    TYRIAN_DIR = $(datarootdir)/opentyrian
+    TYRIAN_DIR = $(datarootdir)/opentyrian/data
 endif
 
 WITH_NETWORK := false
@@ -103,19 +103,20 @@ debug : all
 .PHONY : installdirs
 installdirs :
 	mkdir -p $(DESTDIR)$(bindir)
-	mkdir -p $(DESTDIR)$(docdir)
+	mkdir -p $(DESTDIR)$(docdir)/data
 	mkdir -p $(DESTDIR)$(man6dir)
 
 .PHONY : install
 install : $(TARGET) installdirs
 	$(INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(bindir)/
 	$(INSTALL_DATA) CREDITS NEWS README $(DESTDIR)$(docdir)/
+	$(INSTALL_DATA) data/* $(DESTDIR)$(docdir)/data
 	$(INSTALL_DATA) linux/man/opentyrian.6 $(DESTDIR)$(man6dir)/opentyrian$(man6ext)
 
 .PHONY : uninstall
 uninstall :
 	rm -f $(DESTDIR)$(bindir)/$(TARGET)
-	rm -f $(DESTDIR)$(docdir)/{CREDITS,NEWS,README}
+	rm -rf $(DESTDIR)$(docdir)
 	rm -f $(DESTDIR)$(man6dir)/opentyrian$(man6ext)
 
 .PHONY : clean
