@@ -52,7 +52,8 @@ ifeq ($(WITH_NETWORK), true)
     EXTRA_CPPFLAGS += -DWITH_NETWORK
 endif
 
-HG_REV := $(shell hg id -ib && touch src/hg_revision.h)
+#HG_REV := $(shell hg id -ib && touch src/hg_revision.h)
+HG_REV := 2.1.20190312
 ifneq ($(HG_REV), )
     EXTRA_CPPFLAGS += -DHG_REV='"$(HG_REV)"'
 endif
