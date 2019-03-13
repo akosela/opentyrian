@@ -12,7 +12,12 @@ multiplayer.
 
 == Building ====================================================================
 
-Make sure you have libsdl and sdl_net installed.
+Make sure you have libsdl installed.
+
+  $ make
+  $ make install
+
+By default $prefix is /usr/local.
 
 == Keyboard Controls ===========================================================
 
