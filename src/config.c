@@ -218,8 +218,8 @@ Config opentyrian_config;  // implicitly initialized
 bool load_opentyrian_config( void )
 {
 	// defaults
-	fullscreen_enabled = false;
-	set_scaler_by_name("Scale2x");
+	fullscreen_enabled = true;
+	set_scaler_by_name("None");
 	
 	Config *config = &opentyrian_config;
 	
@@ -696,7 +696,7 @@ const char *get_user_directory( void )
 			char *home = getenv("HOME");
 			if (home != NULL)
 			{
-				snprintf(user_dir, sizeof(user_dir), "%s/.config/opentyrian", home);
+				snprintf(user_dir, sizeof(user_dir), "%s/.opentyrian", home);
 			}
 			else
 			{
