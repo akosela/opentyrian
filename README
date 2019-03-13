@@ -10,6 +10,10 @@ to fight MicroSol and save the galaxy.
 Tyrian features a story mode, one- and two-player arcade modes, and networked
 multiplayer.
 
+== Building ====================================================================
+
+Make sure you have libsdl and sdl_net installed.
+
 == Keyboard Controls ===========================================================
 
 ctrl-backspace -- kill OpenTyrian
