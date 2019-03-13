@@ -2,13 +2,13 @@
 
 ifneq ($(filter Msys Cygwin, $(shell uname -o)), )
     PLATFORM := WIN32
-    TYRIAN_DIR = C:\\TYRIAN
+    TYRIAN_DIR = C:\\OPENTYRIAN
 else
     PLATFORM := UNIX
-    TYRIAN_DIR = $(gamesdir)/tyrian
+    TYRIAN_DIR = $(datarootdir)/opentyrian
 endif
 
-WITH_NETWORK := true
+WITH_NETWORK := false
 
 ################################################################################
 
@@ -29,7 +29,7 @@ exec_prefix ?= $(prefix)
 bindir ?= $(exec_prefix)/bin
 datarootdir ?= $(prefix)/share
 datadir ?= $(datarootdir)
-docdir ?= $(datarootdir)/doc/opentyrian
+docdir ?= $(datarootdir)/opentyrian
 mandir ?= $(datarootdir)/man
 man6dir ?= $(mandir)/man6
 man6ext ?= .6
